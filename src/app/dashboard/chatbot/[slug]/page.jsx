@@ -22,7 +22,7 @@ export default function Page({ params }) {
     const fetchChatBotData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/chatbot/single/${slug}`
+          `https://chatbuilder-puce.vercel.app/api/chatbot/single/${slug}`
         );
         setChatbot(res.data.chatbot || null);
       } catch (error) {
@@ -48,7 +48,7 @@ export default function Page({ params }) {
     const fetchChatHistory = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/chatbot/getchathistory",
+          "https://chatbuilder-puce.vercel.app/api/chatbot/getchathistory",
           { id: userId }
         );
         setChatHistory(response.data.data || []);

@@ -45,7 +45,7 @@ const Sidebar = ({setIsSidebarOpen,isSidebarOpen}) => {
         if (isGoogleAuth === "true") {
           const accessToken = getCookie("token");
           const response = await axios.get(
-            "http://localhost:5000/auth/login/success",
+            "https://chatbuilder-puce.vercel.app/auth/login/success",
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
@@ -99,7 +99,7 @@ const Sidebar = ({setIsSidebarOpen,isSidebarOpen}) => {
     const fetchChatHistory = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/chatbot/getchathistory",
+          "https://chatbuilder-puce.vercel.app/api/chatbot/getchathistory",
           { id: userId }
         );
         setChatHistory(response.data.data);

@@ -60,7 +60,7 @@ const SignupPage = () => {
 
   const googleAuth = () => {
     localStorage.setItem("isGoogleAuth", "true");
-    window.location.href = "http://localhost:5000/auth/google";
+    window.location.href = "https://chatbuilder-puce.vercel.app/auth/google";
   };
 
   const heading = useRef(null)

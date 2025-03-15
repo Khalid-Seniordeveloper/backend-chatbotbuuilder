@@ -2,7 +2,7 @@
 const nextConfig = {
     output: "standalone",
     env: {
-        NEXT_PUBLIC_BaseUrl: "http://localhost:5000/api",
+        NEXT_PUBLIC_BaseUrl: "https://chatbuilder-puce.vercel.app/api",
         NEXT_PUBLIC_Signup_Url: "/signup",
         NEXT_PUBLIC_Login_Url: "/login",
         NEXT_PUBLIC_FIREBASE_API_KEY: "AIzaSyAAoStJGt0OoZ6q2Y3A2j8KqEsl4T3tDIs",

@@ -28,7 +28,7 @@ const CurrentChatbox = ({ chatId, chatbot }) => {
     if (!selectedChat) return;
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/chatbot/getmessages/${selectedChat}`
+        `https://chatbuilder-puce.vercel.app/api/chatbot/getmessages/${selectedChat}`
       );
       const fetchedMessages = response.data.data || [];
       setChatMessages((prev) => ({
@@ -114,7 +114,7 @@ const CurrentChatbox = ({ chatId, chatbot }) => {
       setIsStreaming(true); // Start streaming
   
       const response = await fetch(
-        `http://localhost:5000/api/chatbot/ask?question=${encodeURIComponent(
+        `https://chatbuilder-puce.vercel.app/api/chatbot/ask?question=${encodeURIComponent(
           message
         )}&chatbotId=${selectedChat}`,
         { signal: controller.signal }
@@ -266,7 +266,7 @@ const CurrentChatbox = ({ chatId, chatbot }) => {
   const fetchChatHistory = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/chatbot/getchathistory",
+        "https://chatbuilder-puce.vercel.app/api/chatbot/getchathistory",
         { id: userId }
       );
       setChatHistory(response.data.data);
@@ -432,7 +432,7 @@ const CurrentChatbox = ({ chatId, chatbot }) => {
     }
   
     try {
-      const response = await axios.delete(`http://localhost:5000/api/chatbot/deleteChats/${chatId}`);
+      const response = await axios.delete(`https://chatbuilder-puce.vercel.app/api/chatbot/deleteChats/${chatId}`);
       console.log(response);
   
       setChatMessages((prev) => {
